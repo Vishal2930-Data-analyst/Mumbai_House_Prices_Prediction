@@ -611,35 +611,6 @@ with col2:
                 </div>
             """, unsafe_allow_html=True)
 
-# ----------- DISCLAIMER SECTION -----------
-st.markdown("<br><br>", unsafe_allow_html=True)
-with st.expander("📋 Important Information", expanded=False):
-    st.markdown("""
-        <div style='background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; color: white;'>
-            <h4 style='color: white;'>Disclaimer</h4>
-            <p>This prediction is based on a machine learning model trained on Mumbai property data.
-            Actual prices may vary based on market conditions, property condition, and other factors.
-            Please consult with a real estate professional for accurate valuation.</p>
-
-            <h4 style='color: white; margin-top: 20px;'>How it works</h4>
-            <p>Our Random Forest model analyzes multiple factors including location, size, amenities,
-            and market trends to provide an accurate estimate of property value.</p>
-
-            <h4 style='color: white; margin-top: 20px;'>Features used</h4>
-            <ul>
-                <li>📍 Location-based features (Locality, City)</li>
-                <li>📏 Physical attributes (Area, Total Floors)</li>
-                <li>🛏️ Room configuration (Bedrooms, Bathrooms, Balcony)</li>
-                <li>💰 Market factors (Price per sqft)</li>
-                <li>🏗️ Property characteristics (Type, Furnishing)</li>
-            </ul>
-
-            <h4 style='color: white; margin-top: 20px;'>Available Localities</h4>
-            <p style='font-size: 0.9rem; line-height: 1.8;'>
-                {} ...
-            </p>
-        </div>
-    """.format(", ".join(localities[:20]) + f" and {len(localities)-20} more"), unsafe_allow_html=True)
 
 # ----------- FOOTER -----------
 st.markdown("""
