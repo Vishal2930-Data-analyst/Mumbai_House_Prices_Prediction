@@ -616,6 +616,6 @@ with col2:
 st.markdown("""
     <hr>
     <p style='text-align: center; color: rgba(255,255,255,0.7); font-size: 0.9rem;'>
-        Made with ❤️ using Streamlit | Model: Random Forest Regressor | Data: Mumbai Real Estate Market
+        Made with ❤️ using Streamlit | Model: Random Forest Regressor | Data: Mumbai House Prices
     </p>
 """, unsafe_allow_html=True)
