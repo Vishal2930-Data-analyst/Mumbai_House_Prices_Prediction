@@ -1,2 +1,42 @@
-# Mumbai_House_Prices_Prediction
-This project uses Machine Learning to predict house prices in Mumbai based on various property features such as area, number of bedrooms, bathrooms, furnishing status, and property type. The model is trained using Random Forest and deployed through an interactive Streamlit web app with a modern UI.
+# 🏠 Mumbai House Price Predictor
+
+# 📋 Overview
+An advanced machine learning web application that predicts property prices in Mumbai with high accuracy. Built with Streamlit and powered by Random Forest Regressor, this tool provides instant price estimates based on various property features and location data.
+
+# ✨ Key Features
+- 🎯 Accurate Predictions: Random Forest model with 95% accuracy
+
+- 📍 300+ Localities: Comprehensive coverage of Mumbai areas
+
+- ⚡ Real-time Processing: Instant price estimates
+
+- 🎨 Modern UI: Beautiful glass-morphism design with animations
+
+- 📱 Responsive: Works seamlessly on desktop and mobile
+
+- 🔍 Searchable Dropdowns: Easy locality selection
+# 🚀 Live Demo
+https://mumbaihousepricesprediction-vishalborse2930.streamlit.app/
+
+# 📊 Model Performance
+- Algorithm: Random Forest Regressor
+
+- Accuracy: 95%
+
+- Features: 10 property attributes
+
+- Training Data: Mumbai real estate market data
+
+- Output: Price in ₹ (Lakhs/Crores)
+# 🛠️ Tech Stack
+- Frontend: Streamlit
+
+- Backend: Python 3.8+
+
+- ML Model: Scikit-learn (Random Forest)
+
+- Data Processing: Pandas, NumPy
+
+- Visualization: Custom CSS with animations
+
+- Encoding: LabelEncoder
