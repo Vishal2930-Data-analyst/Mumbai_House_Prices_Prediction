@@ -99,7 +99,7 @@ localities = [
 # Sort localities alphabetically for better UX
 localities.sort()
 
-# ----------- MODERN LUXURY CSS -----------
+# ----------- MODERN LUXURY CSS WITH FIXED VISIBILITY -----------
 st.markdown("""
 <style>
     /* Import Google Fonts */
@@ -112,7 +112,7 @@ st.markdown("""
     
     /* Main container with animated gradient background */
     [data-testid="stAppViewContainer"] {
-        background: linear-gradient(-45deg, #667eea, #764ba2, #6b8cff, #23d5ab);
+        background: linear-gradient(-45deg, #1a1a2e, #16213e, #0f3460, #1a1a2e);
         background-size: 400% 400%;
         animation: gradient 15s ease infinite;
         min-height: 100vh;
@@ -126,12 +126,12 @@ st.markdown("""
     
     /* Glass morphism card effect */
     .glass-card {
-        background: rgba(255, 255, 255, 0.25);
+        background: rgba(255, 255, 255, 0.1);
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
         border-radius: 20px;
         padding: 30px;
-        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
         border: 1px solid rgba(255, 255, 255, 0.18);
         margin: 20px 0;
     }
@@ -181,28 +181,54 @@ st.markdown("""
         }
     }
     
-    @keyframes pulse {
-        0% { transform: scale(1); }
-        50% { transform: scale(1.05); }
-        100% { transform: scale(1); }
-    }
-    
-    /* Input field styling */
-    .stNumberInput input, .stTextInput input, .stSelectbox div[data-baseweb="select"] > div {
-        background: rgba(255, 255, 255, 0.9) !important;
-        border: 2px solid rgba(255, 255, 255, 0.1) !important;
-        border-radius: 15px !important;
-        padding: 10px 15px !important;
+    /* Input field styling - FIXED VISIBILITY */
+    .stNumberInput input, .stTextInput input {
+        background: white !important;
+        border: 2px solid #4a5568 !important;
+        border-radius: 10px !important;
+        padding: 12px 15px !important;
         font-size: 1rem !important;
-        transition: all 0.3s ease !important;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
-        margin-bottom: 15px !important;
+        color: #1a202c !important;
+        font-weight: 500 !important;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
     }
     
+    /* Selectbox styling - FIXED VISIBILITY */
+    .stSelectbox div[data-baseweb="select"] > div {
+        background: white !important;
+        border: 2px solid #4a5568 !important;
+        border-radius: 10px !important;
+        color: #1a202c !important;
+        font-weight: 500 !important;
+    }
+    
+    /* Selected value text color */
+    .stSelectbox div[data-baseweb="select"] span {
+        color: #1a202c !important;
+        font-weight: 600 !important;
+    }
+    
+    /* Dropdown menu items */
+    .stSelectbox div[data-baseweb="popover"] li {
+        color: #1a202c !important;
+        background: white !important;
+    }
+    
+    .stSelectbox div[data-baseweb="popover"] li:hover {
+        background: #667eea !important;
+        color: white !important;
+    }
+    
+    /* Number input value */
+    .stNumberInput input {
+        color: #1a202c !important;
+        font-weight: 600 !important;
+    }
+    
+    /* Input focus states */
     .stNumberInput input:focus, .stTextInput input:focus, .stSelectbox div[data-baseweb="select"] > div:focus {
         border-color: #667eea !important;
         box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.3) !important;
-        transform: translateY(-2px) !important;
     }
     
     /* Label styling */
@@ -210,9 +236,20 @@ st.markdown("""
         color: white !important;
         font-weight: 600 !important;
         font-size: 1rem !important;
-        margin-bottom: 5px !important;
-        text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        margin-bottom: 8px !important;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         display: block !important;
+    }
+    
+    /* Section headers */
+    h3 {
+        color: white !important;
+        font-size: 1.3rem !important;
+        font-weight: 700 !important;
+        margin-bottom: 20px !important;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        border-bottom: 2px solid rgba(255,255,255,0.2);
+        padding-bottom: 10px;
     }
     
     /* Button styling */
@@ -232,6 +269,7 @@ st.markdown("""
         text-transform: uppercase;
         animation: pulse 2s infinite;
         margin-top: 20px;
+        border: 2px solid rgba(255,255,255,0.2);
     }
     
     .stButton > button:hover {
@@ -242,15 +280,14 @@ st.markdown("""
     
     /* Result card */
     .result-card {
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(10px);
+        background: white;
         border-radius: 20px;
         padding: 40px;
         text-align: center;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         margin: 30px 0;
         animation: fadeInUp 0.8s ease;
-        border: 2px solid rgba(255, 255, 255, 0.5);
+        border: 2px solid #667eea;
     }
     
     .result-label {
@@ -267,7 +304,6 @@ st.markdown("""
         font-size: 3.5rem;
         font-weight: 800;
         line-height: 1.2;
-        text-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
     
     .result-value span {
@@ -277,7 +313,7 @@ st.markdown("""
     
     /* Feature cards */
     .feature-card {
-        background: rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.15);
         backdrop-filter: blur(5px);
         border-radius: 15px;
         padding: 20px;
@@ -290,7 +326,7 @@ st.markdown("""
     
     .feature-card:hover {
         transform: translateY(-5px);
-        background: rgba(255, 255, 255, 0.2);
+        background: rgba(255, 255, 255, 0.25);
     }
     
     .feature-icon {
@@ -319,8 +355,8 @@ st.markdown("""
     
     /* Success message */
     .success-message {
-        background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
-        color: #2d3748;
+        background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+        color: white;
         padding: 15px;
         border-radius: 10px;
         text-align: center;
@@ -348,7 +384,7 @@ st.markdown("""
     /* Tab styling */
     .stTabs [data-baseweb="tab-list"] {
         gap: 10px;
-        background: rgba(255, 255, 255, 0.1);
+        background: rgba(0, 0, 0, 0.3);
         padding: 10px;
         border-radius: 50px;
         margin-bottom: 20px;
@@ -362,7 +398,7 @@ st.markdown("""
     }
     
     .stTabs [aria-selected="true"] {
-        background: rgba(255, 255, 255, 0.3) !important;
+        background: rgba(102, 126, 234, 0.8) !important;
         color: white !important;
     }
     
@@ -379,10 +415,11 @@ st.markdown("""
         .glass-card {
             padding: 20px;
         }
-        
-        div[data-testid="column"] {
-            padding: 0 5px !important;
-        }
+    }
+    
+    /* Help text/tooltip */
+    .stTooltip {
+        color: rgba(255,255,255,0.7) !important;
     }
 </style>
 """, unsafe_allow_html=True)
